@@ -1,0 +1,9 @@
+# virtual env
+venv
+
+# infra
+.terraform*
+terraform.tfstate
+terraform.tfstate.backup
+
+.credentials.txt
