@@ -11,7 +11,7 @@ def lambda_handler(event, context):
     decode_body = base64.b64decode(body)
     sns_topic_arn = os.getenv('SNS_TOPIC_ARN')
     print(decode_body)
-    message = decode_body
+    message = decode_body.decode('ascii')
     subject = "Test Email from Lambda"
 
     try:
