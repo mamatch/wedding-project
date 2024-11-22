@@ -19,10 +19,42 @@ resource "aws_iam_role" "lambda_role" {
   })
 }
 
+resource "aws_iam_policy" "sns_publish_policy" {
+  name = "sns_publish_policy"
+
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect   = "Allow",
+        Action   = "sns:Publish",
+        Resource = aws_sns_topic.sns_topic.arn
+      }
+    ]
+  })
+}
+
+resource "aws_iam_policy_attachment" "lambda_sns_publish" {
+  name       = "lambda_sns_publish"
+  roles      = [aws_iam_role.lambda_role.name]
+  policy_arn = aws_iam_policy.sns_publish_policy.arn
+}
+
 resource "aws_iam_policy_attachment" "lambda_execution_policy" {
   name       = "lambda_execution_policy"
   roles      = [aws_iam_role.lambda_role.name]
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
+
+resource "aws_sns_topic" "sns_topic" {
+  name = "example_sns_topic"
+}
+
+resource "aws_sns_topic_subscription" "email_subscription" {
+  topic_arn = aws_sns_topic.sns_topic.arn
+  protocol  = "email"
+  endpoint  = "eteilj@gmail.com" # Remplace par ton adresse e-mail
 }
 
 data "archive_file" "lambda_zip" {
@@ -40,6 +72,11 @@ resource "aws_lambda_function" "example_lambda" {
   filename = data.archive_file.lambda_zip.output_path
 
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
+  environment {
+    variables = {
+        SNS_TOPIC_ARN = aws_sns_topic.sns_topic.arn
+    }
+  }
 }
 
 resource "aws_apigatewayv2_api" "api_gateway" {
@@ -57,7 +94,7 @@ resource "aws_apigatewayv2_integration" "lambda_integration" {
 
 resource "aws_apigatewayv2_route" "lambda_route" {
   api_id    = aws_apigatewayv2_api.api_gateway.id
-  route_key = "GET /"
+  route_key = "POST /"
 
   target = "integrations/${aws_apigatewayv2_integration.lambda_integration.id}"
 }
