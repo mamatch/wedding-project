@@ -48,10 +48,10 @@
 
 /* #Variables
 ================================================== */
-$color: #eca2f6;
+$color: #ffb6c1;
 $text-color: #515253;
 $sat-color: saturate($color, 6%);
-$color-overlay: darken($color, 33%);
+$color-overlay: darken($color, 10%);
 $section-bg-color: #f9f9f9;
 
 $font-family: 'Poppins', sans-serif;
@@ -148,7 +148,7 @@ $pattern: url('../images/neela-pattern.png');
 
 #bridesmaids,
 #bmiadsgmen{
-	@include background-image-retina("https://via.placeholder.com/1920x1080", 'png');
+	@include background-image-retina("../images/bg_image.png", 'png');
 }
 
 #groomsmen{
