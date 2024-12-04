@@ -11,8 +11,18 @@ def lambda_handler(event, context):
     decode_body = base64.b64decode(body)
     sns_topic_arn = os.getenv('SNS_TOPIC_ARN')
     print(decode_body)
-    message = decode_body.decode('ascii')
-    subject = "Test Email from Lambda"
+    message = decode_body.decode('utf-8').replace('+', ' ')
+    subject = "Confirmation reservation mariage"
+
+    values_dict = {y.split('=')[0]:y.split('=')[1] for y in message.split('&')}
+    
+    confirmation = True if values_dict.get('Attend wedding') == 'on' else False
+    user_name = values_dict.get('Name')
+    user_message = values_dict.get('Message')
+    if confirmation:
+        message = f'{user_name} a confirme sa presence.\n\n{"Voici son message: " + user_message if message else None}'
+    else:
+        message = f'{user_name} ne pourra pas etre present.\n\n{"Voici son message: " + user_message if message else None}'
 
     try:
         sns_client.publish(
