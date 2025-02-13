@@ -268,72 +268,61 @@
 							<form id="form-rsvp" method="post" action="#">
 								
 								<div class="form-floating">
-									<input type="text" name="Name" id="name" placeholder="Your Name*" class="form-control required fromName">
-									<label for="name">Your Name*</label>
+									<input type="text" name="Name" id="name" placeholder="Votre nom*" class="form-control required fromName">
+									<label for="name">Votre nom*</label>
 								</div>
 								
-								<div class="form-floating">
+								<!--<div class="form-floating">
 									<input type="email" name="E-mail" id="email" placeholder="E-mail*" class="form-control required fromEmail">
 									<label for="email">E-mail*</label>
-								</div>
+								</div>-->
 								
-								<div class="form-check-wrapper">
+								<!--<div class="form-check-wrapper">
 									<div class="form-check form-check-inline">
 										<input class="form-check-input required" type="radio" name="Attend wedding" id="attend_wedding_yes">
-										<label for="attend_wedding_yes">Yes, I will attend.</label>
+										<label for="attend_wedding_yes">Oui, je confirme ma presence.</label>
 									</div>
 									
 									<div class="form-check form-check-inline">
 										<input class="form-check-input required" type="radio" name="Attend wedding" id="attend_wedding_no">
-										<label for="attend_wedding_no">Sorry, I can't come.</label>
+										<label for="attend_wedding_no">Desole, je ne pourrai pas etre la.</label>
 									</div>
 								</div>
 								
 								<div class="form-floating">
-									<select class="form-select" aria-label="Number of guests" name="Number of Guests" id="num_guests">
-										<option value="0">0</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
+									<select class="form-select" aria-label="presences" name="presences" id="presences">
+										<option value="0">Oui, je confirme ma presence a la dote</option>
+										<option value="1">Oui, je confirme ma presence a la ceremonie religieuse</option>
+										<option value="2">Oui, je confirme ma presence a la soiree</option>
 									</select>
 									
-									<label for="num_guests">Number of guests</label>
-								</div>
+									<label for="presences">Serai-je present(e)?</label>
+								</div>-->
 								
-								<fieldset class="form-check-wrapper required" name="Meal Preferences" id="meal_pref">
-									<label>Meal Preferences:</label>
+								<fieldset class="form-check-wrapper required" name="presences" id="presences">
+									
 									
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="meal_meat">
-										<label for="meal_meat">
-											Meat
+										<input class="form-check-input" type="checkbox" value="dote" id="presence_dote">
+										<label for="presence_soiree">
+											Oui, je confirme ma présence à la dote
 										</label>
 									</div>
 									
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="meal_fish">
-										<label for="meal_fish">
-											Fish
+										<input class="form-check-input" type="checkbox" value="eglise" id="presence_eglise">
+										<label for="presence_soiree">
+											Oui, je confirme ma présence à la cérémonie religieuse
 										</label>
 									</div>
 									
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="meal_vegetarian">
-										<label for="meal_vegetarian">
-											Vegetarian
+										<input class="form-check-input" type="checkbox" value="soiree" id="presence_soiree">
+										<label for="presence_soiree">
+											Oui, je confirme ma présence à la soiree
 										</label>
 									</div>
 									
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="meal_gluten_free">
-										<label for="meal_gluten_free">
-											Gluten free
-										</label>
-									</div>
 								</fieldset>
 								
 								<div class="form-floating">
@@ -342,9 +331,10 @@
 								</div>
 								
 								<div class="form_status_message"></div>
+								<p id="responseMessage"></p>
 								
 								<div class="center">
-									<button type="submit" class="btn btn-primary submit_form">Send</button>
+									<button type="submit" class="btn btn-primary">Envoyer</button>
 								</div>
 							</form>
 						</div>
