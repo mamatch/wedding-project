@@ -90,5 +90,12 @@ var map_markers = [
         "longitude": 9.753920533856045,
         "icon": "fas fa-bell", //Check the full list of icons at http://fortawesome.github.io/Font-Awesome/icons/
         "infoWindow": "Eglise Sainte Monique, Makepe"
+    },
+    {
+        "title": "Ceremonie",
+        "latitude": 4.084823525964982, 
+        "longitude": 9.756082973156596,
+        "icon": "fas fa-bell", //Check the full list of icons at http://fortawesome.github.io/Font-Awesome/icons/
+        "infoWindow": " Mohamed location (+237 96366689) <br> kura cars (+237 6 55 95 30 20)"
     }
 ];
