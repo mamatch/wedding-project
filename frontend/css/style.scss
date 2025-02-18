@@ -139,20 +139,27 @@ $pattern: url('../images/neela-pattern.png');
 /* #Sections with background image
 ================================================== */
 #our-story-title{
-    @include background-image-retina("https://via.placeholder.com/1920x1080", 'png');
+    @include background-image-retina("../images/chrono10", 'png');
+}
+
+#hero{
+	@include background-image-retina("../images/chrono10", 'png');
+	background-repeat:no-repeat;
+	background-size: cover; // Ensures the image covers the entire div
+  	background-position: center;
 }
 
 #the-wedding{
-	@include background-image-retina("https://via.placeholder.com/1920x1080", 'png');
+	@include background-image-retina("../images/chrono9", 'png');
 }
 
 #bridesmaids,
 #bmiadsgmen{
-	@include background-image-retina("../images/bg_image.png", 'png');
+	@include background-image-retina("../images/chrono8", 'png');
 }
 
 #groomsmen{
-	@include background-image-retina("https://via.placeholder.com/1920x1080", 'png');
+	@include background-image-retina("../images/chrono7", 'png');
 }
 
 #giftregistry{
@@ -160,7 +167,7 @@ $pattern: url('../images/neela-pattern.png');
 }
 
 .page-header{
-	@include background-image-retina("https://via.placeholder.com/1920x1080", 'png');
+	@include background-image-retina("../images/chrono12", 'png');
 }
 
 #menu-image{

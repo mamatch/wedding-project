@@ -63,40 +63,52 @@
 /* #Sections with background image
 ================================================== */
 #our-story-title {
-  background-image: url("https://via.placeholder.com/1920x1080.png");
+  background-image: url("../images/chrono10.png");
 }
 @media (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
   #our-story-title {
-    background-image: url("https://via.placeholder.com/1920x1080@2x.png");
+    background-image: url("../images/chrono10@2x.png");
+  }
+}
+
+#hero {
+  background-image: url("../images/chrono10.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+  #hero {
+    background-image: url("../images/chrono10@2x.png");
   }
 }
 
 #the-wedding {
-  background-image: url("https://via.placeholder.com/1920x1080.png");
+  background-image: url("../images/chrono9.png");
 }
 @media (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
   #the-wedding {
-    background-image: url("https://via.placeholder.com/1920x1080@2x.png");
+    background-image: url("../images/chrono9@2x.png");
   }
 }
 
 #bridesmaids,
 #bmiadsgmen {
-  background-image: url("../images/bg_image.png.png");
+  background-image: url("../images/chrono8.png");
 }
 @media (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
   #bridesmaids,
   #bmiadsgmen {
-    background-image: url("../images/bg_image.png@2x.png");
+    background-image: url("../images/chrono8@2x.png");
   }
 }
 
 #groomsmen {
-  background-image: url("https://via.placeholder.com/1920x1080.png");
+  background-image: url("../images/chrono7.png");
 }
 @media (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
   #groomsmen {
-    background-image: url("https://via.placeholder.com/1920x1080@2x.png");
+    background-image: url("../images/chrono7@2x.png");
   }
 }
 
@@ -110,11 +122,11 @@
 }
 
 .page-header {
-  background-image: url("https://via.placeholder.com/1920x1080.png");
+  background-image: url("../images/chrono12.png");
 }
 @media (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
   .page-header {
-    background-image: url("https://via.placeholder.com/1920x1080@2x.png");
+    background-image: url("../images/chrono12@2x.png");
   }
 }
 
