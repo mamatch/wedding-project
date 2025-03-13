@@ -1,5 +1,6 @@
 provider "aws" {
   region = "eu-west-3" # Remplace par ta région
+  profile = "weddingProfile"
 }
 
 resource "aws_iam_role" "lambda_role" {
@@ -54,7 +55,7 @@ resource "aws_sns_topic" "sns_topic" {
 resource "aws_sns_topic_subscription" "email_subscription" {
   topic_arn = aws_sns_topic.sns_topic.arn
   protocol  = "email"
-  endpoint  = "Youndzofrancine@yahoo.fr" # Remplace par ton adresse e-mail
+  endpoint  = "eteilj@gmail.com" # Remplace par ton adresse e-mail
 }
 
 data "archive_file" "lambda_zip" {

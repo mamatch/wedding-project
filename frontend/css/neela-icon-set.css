@@ -65,3 +65,12 @@
 .icon-african-drum:before {
   content: "\69";
 }
+.icon-transport:before {
+  content: "\6a";
+}
+.icon-location:before {
+  content: "\6b";
+}
+.icon-money:before {
+  content: "\6c";
+}
