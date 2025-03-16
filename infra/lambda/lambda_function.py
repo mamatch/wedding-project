@@ -57,7 +57,7 @@ Voici son message: {user_message}.
             "body": '''
                 <html>
                     <head>
-                        <meta http-equiv="refresh" content="0; url=https://wedding-project-swart.vercel.app/">
+                        <meta http-equiv="refresh" content="0; url=https://francine-et-roderic.vercel.app/">
                     </head>
                 </html>
             '''
