@@ -30,8 +30,11 @@ def lambda_handler(event, context):
 
     if confirmation:
         presences = ''
-        for p in parsed_data.get('presences[]'):
-            presences = presences + f'- {p}\n'
+        if isinstance(parsed_data.get('presences[]'), list):
+            for p in parsed_data.get('presences[]'):
+                presences = presences + f'- {p}\n'
+        else:
+            presences = f'- {parsed_data.get("presences[]")}' 
         message = f'''{user_name} confirme sa présence aux événements suivants:\n
 {presences}
 Voici son message: {user_message}.
